@@ -31,10 +31,6 @@
 #     k+=2
 
 
-
-# square root method for a number prime?
-
-
 # Range is a sequence but concat and reprtition can't be done e.g. range(10)+range(10) or 3*range(10)
 ans=0
 for i in range(1,1001):
