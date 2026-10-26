@@ -37,13 +37,31 @@
 # delete_at_even_positions(d)
 # print(d)
 
+# inefficient way of solving
 a=[4, 2, 7, 1, 45, 23]
+# def select_sort(x):
+#     for i in range(len(x)-1):
+#         # inefficient
+#         y=x[i:] # each time through the loop look for the minimum from position i to the end.
+        
+#         # inefficient
+#         m=min(y)
+#         pos=x.index(m,i,len(x)) # find the index of the first element with value m in the range [i,len(x)
+#         x[i],x[pos]=x[pos],x[i] # swap the element at position i with the element at position pos
+
+# select_sort(a)
+# print(a)
+
+
 def select_sort(x):
     for i in range(len(x)-1):
-        y=x[i:] # each time through the loop look for the minimum from position i to the end.
-        m=min(y)
-        pos=x.index(m,i,len(x)) # find the index of the first element with value m in the range [i,len(x)
-        x[i],x[pos]=x[pos],x[i] # swap the element at position i with the element at position pos
+        m=x[i]
+        pos=i
+        for j in range(i,len(x)):
+            if x[j]<m:
+                m=x[j]
+                pos=j
+    x[i],x[pos]=x[pos],x[i]
 
 select_sort(a)
 print(a)
