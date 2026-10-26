@@ -1,16 +1,37 @@
-def play_game(strategy):
+
+import random
+
+
+def play_game():
     chips = 2000
     cumulative_bets = 0
+    target = 10000
 
-    while chips > 0 and cumulative_bets < 10000:
-        # 1. Choose a bet using the strategy
-        bet = strategy(chips, cumulative_bets)
+    while chips > 0 and cumulative_bets < target:
+        bet = 1  # Strategy: always bet 1 chip
 
-        # 2. Add the bet to cumulative betting volume
         cumulative_bets += bet
 
-        # 3. Simulate the outcome
-        if random number is less than 0.40:
-            chips += bet
+        if random.random() < 0.40:
+            chips += bet  # Win
         else:
-            chips -= bet
+            chips -= bet  # Lose
+
+    return cumulative_bets >= target
+
+
+def simulate_games(num_games=10000):
+    games_won = 0
+
+    for _ in range(num_games):
+        if play_game():
+            games_won += 1
+
+    win_rate = games_won / num_games
+
+    print(f"Games simulated: {num_games}")
+    print(f"Games won: {games_won}")
+    print(f"Win rate: {win_rate:.2%}")
+
+
+simulate_games()
