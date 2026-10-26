@@ -16,14 +16,34 @@
 #     print
 
 # monte carlo method 
-from math import sqrt
-from random import random
-count=0
-for i in range(1000000): # for a large sample
-    x=random()
-    y=random()
+# from math import sqrt
+# from random import random
+# count=0
+# for i in range(1000000): # for a large sample
+#     x=random()
+#     y=random()
 
-    if sqrt(x*x+y*y)<1:
-        count+=1
+#     if sqrt(x*x+y*y)<1:
+#         count+=1
 
-print(4*(count/1000000)) # pi estimation
+# print(4*(count/1000000)) # pi estimation
+
+
+# d = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# print(d[1:len(d):2])
+# def delete_at_even_positions(x):
+#     del x[1:len(x):2]
+
+# delete_at_even_positions(d)
+# print(d)
+
+a=[4, 2, 7, 1, 45, 23]
+def select_sort(x):
+    for i in range(len(x)-1):
+        y=x[i:] # each time through the loop look for the minimum from position i to the end.
+        m=min(y)
+        pos=x.index(m,i,len(x)) # find the index of the first element with value m in the range [i,len(x)
+        x[i],x[pos]=x[pos],x[i] # swap the element at position i with the element at position pos
+
+select_sort(a)
+print(a)

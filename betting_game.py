@@ -35,3 +35,11 @@ def simulate_games(num_games=10000):
 
 
 simulate_games()
+
+
+# Drift-Diffusion Model (DDM):
+    # Drift: The average direction of change
+    # Diffusion: Random fluctuations around that average.
+
+# A martingale argument is a proof technique in where the conditional 
+# expectation of a future value, given all past information, equals the current value
