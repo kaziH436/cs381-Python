@@ -53,15 +53,57 @@ a=[4, 2, 7, 1, 45, 23]
 # print(a)
 
 
-def select_sort(x):
-    for i in range(len(x)-1):
-        m=x[i]
-        pos=i
-        for j in range(i,len(x)):
-            if x[j]<m:
-                m=x[j]
-                pos=j
-    x[i],x[pos]=x[pos],x[i]
+# def select_sort(x):
+#     for i in range(len(x)-1):
+#         m=x[i]
+#         pos=i
+#         for j in range(i,len(x)):
+#             if x[j]<m:
+#                 m=x[j]
+#                 pos=j
+#     x[i],x[pos]=x[pos],x[i]
 
-select_sort(a)
-print(a)
+# select_sort(a)
+# print(a)
+
+
+def insertion_sort(arr):
+ # Traverse through 1 to len(arr)
+    for i in range(1, len(arr)):
+        key = arr[i]
+        # Move elements of arr[0..i-1], that are greater than key,
+        # to one position ahead of their current position
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+            arr[j + 1] = key
+    return arr
+
+arr = [12, 11, 13, 5, 6]
+insertion_sort(arr)
+print("Sorted array is:", arr)
+
+
+def binary_search(arr, val, start, end):
+ """Find index to insert val within arr[start:end] via binary search."""
+ while start < end:
+    mid = (start + end) // 2
+    if arr[mid] < val:
+        start = mid + 1
+    else:
+        end = mid
+ return start
+
+def binary_insertion_sort(arr):
+ for i in range(1, len(arr)):
+    val = arr[i]
+ # Find the position to insert the current element
+    pos = binary_search(arr, val, 0, i)
+    # Shift elements to the right to make space for the current element
+    arr[pos+1:i+1] = arr[pos:i]
+    # Insert the current element into its correct position
+    arr[pos] = val
+ return arr
+
+# in place sort means using a constant amount of memory
