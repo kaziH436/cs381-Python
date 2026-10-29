@@ -43,3 +43,8 @@ for i in range(1, 10):
 #     print()
 
 
+# lamda expression, short form fora fucntionn 
+ 
+a=lambda 
+
+a=lambda x, y=x+y

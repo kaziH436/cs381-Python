@@ -32,9 +32,15 @@
 
 
 # Range is a sequence but concat and reprtition can't be done e.g. range(10)+range(10) or 3*range(10)
-ans=0
-for i in range(1,1001):
-    curr=299
-    curr+=i
-    if ans==20:
-        print(i)
+# ans=0
+# for i in range(1,1001):
+#     curr=299
+#     curr+=i
+#     if ans==20:
+#         print(i)
+
+
+
+
+a=3*3*[[0]]
+print(a)
