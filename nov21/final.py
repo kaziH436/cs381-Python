@@ -23,3 +23,17 @@ def report(z):
               " times, at positions " + ", ".join(str(p) for p in d[k][1]))
 
 report(z)
+
+
+
+def free(x):
+    result = []
+    for i in x:
+        if type(i) == type(1):
+            result.append(i)
+        else:
+            result.extend(free(i))
+    return result
+
+def get_nth_largest(grades, n):
+    return sorted(grades, reverse=True)[n-1]
