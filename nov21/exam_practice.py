@@ -5,9 +5,9 @@ import ast
 x=ast.literal_eval(input())
 
 def lastThenFirst(x):
-    fixed = [[first.capitalize(), last.capitalize()] for first, last in x]
+    # fixed = [[first.capitalize(), last.capitalize()] for first, last in x]
 
-    ans=sorted(fixed, key=lambda name: (name[1],name[0]))
+    ans=sorted(x, key=lambda name: (name[1].lower(),name[0].lower()))
     print(ans)
     return ans
 
