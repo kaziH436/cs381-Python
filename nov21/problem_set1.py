@@ -6,12 +6,6 @@ def compose(*funcs):
         return result
     return composed
 
-
-def is_palindrome(s: str) -> bool: # STOP ONCE THEY MEET
-    s = s.lower()
-    return s == s[::-1]
-
-
 def prime_factors(n: int) -> list[int]:
     factors = []
     d = 2
@@ -38,6 +32,13 @@ def rotate_list(items: list, k: int) -> None:
     n = len(items)
     k = k % n  # Handle cases where k > n
     items[:] = items[-k:] + items[:-k]
+
+
+# def is_palindrome(s: str) -> bool: # STOP ONCE THEY MEET
+#     s = s.lower()
+#     return s == s[::-1]
+
+
 
 # def make_counter(start=0):
 #     count = start
